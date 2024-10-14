@@ -602,9 +602,9 @@ static int ov7725_init(const struct device *dev)
 
 	/* set default/init format VGA RGB565 */
 	fmt.pixelformat = VIDEO_PIX_FMT_RGB565;
-	fmt.width = 640;
-	fmt.height = 480;
-	fmt.pitch = 640 * 2;
+	fmt.width = CONFIG_VIDEO_OV7725_DEFAULT_WIDTH;
+	fmt.height = CONFIG_VIDEO_OV7725_DEFAULT_HEIGHT;
+	fmt.pitch = CONFIG_VIDEO_OV7725_DEFAULT_PITCH;
 	ret = ov7725_set_fmt(dev, VIDEO_EP_OUT, &fmt);
 	if (ret) {
 		LOG_ERR("Unable to configure default format");
