@@ -633,6 +633,10 @@ static int ov5640_init(const struct device *dev)
 	}
 
 	k_sleep(K_MSEC(20));
+	/* reset release */
+	if (cfg->reset_gpio.port != NULL) {
+		gpio_pin_set_dt(&cfg->reset_gpio, 1);
+	}
 
 	/* Software reset */
 	ret = ov5640_write_reg(&cfg->i2c, SYS_CTRL0_REG, SYS_CTRL0_SW_RST);
