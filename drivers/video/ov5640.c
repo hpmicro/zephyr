@@ -1397,15 +1397,9 @@ static int ov5640_init(const struct device *dev)
 
 	/* Set default format */
 	fmt.pixelformat = VIDEO_PIX_FMT_RGB565;
-	if (ov5640_is_dvp(dev)) {
-		/* Set default resolution to QQVGA (160x120) */
-		fmt.width = 160;
-		fmt.height = 120;
-	} else {
-		/* Set default resolution to 720p */
-		fmt.width = 1280;
-		fmt.height = 720;
-	}
+	fmt.width = CONFIG_VIDEO_OV5640_DEFAULT_WIDTH;
+	fmt.height = CONFIG_VIDEO_OV5640_DEFAULT_HEIGHT;
+	fmt.pitch = CONFIG_VIDEO_OV5640_DEFAULT_PITCH;
 	ret = ov5640_set_fmt(dev, &fmt);
 	if (ret) {
 		LOG_ERR("Unable to configure default format");
