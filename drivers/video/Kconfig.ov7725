@@ -10,3 +10,24 @@ config VIDEO_OV7725
 	default y
 	help
 	  Enable driver for OV7725 CMOS digital image sensor device.
+
+config VIDEO_OV7725_DEFAULT_WIDTH
+	int "OV7725 default frame width in pixels"
+	depends on DT_HAS_OVTI_OV7725_ENABLED
+	default 640
+	help
+	  frame width in pixels
+
+config VIDEO_OV7725_DEFAULT_HEIGHT
+	int "OV7725 default frame height in pixels"
+	depends on DT_HAS_OVTI_OV7725_ENABLED
+	default 480
+	help
+	  frame height in pixels
+
+config VIDEO_OV7725_DEFAULT_PITCH
+	int "OV7725 default pitch"
+	depends on DT_HAS_OVTI_OV7725_ENABLED
+	default 1280
+	help
+	  line stride

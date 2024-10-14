@@ -551,8 +551,9 @@ static int ov7725_init(const struct device *dev)
 	const struct ov7725_config *cfg = dev->config;
 	struct video_format fmt = {
 		.pixelformat = VIDEO_PIX_FMT_RGB565,
-		.width = 640,
-		.height = 480,
+		.width = CONFIG_VIDEO_OV7725_DEFAULT_WIDTH,
+		.height = CONFIG_VIDEO_OV7725_DEFAULT_HEIGHT,
+		.pitch = CONFIG_VIDEO_OV7725_DEFAULT_PITCH,
 	};
 	uint8_t pid, ver;
 	int ret;
