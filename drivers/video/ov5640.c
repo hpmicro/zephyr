@@ -1309,6 +1309,10 @@ static int ov5640_init(const struct device *dev)
 #endif
 
 	k_sleep(K_MSEC(20));
+	/* reset release */
+	if (cfg->reset_gpio.port != NULL) {
+		gpio_pin_set_dt(&cfg->reset_gpio, 1);
+	}
 
 	/* Reset all registers */
 	ret = video_write_cci_reg(&cfg->i2c, OV5640_REG8(SCCB_SYS_CTRL1_REG), 0x11);
