@@ -675,9 +675,9 @@ static int ov5640_init(const struct device *dev)
 
 	/* Set default format to 720p RGB565 */
 	fmt.pixelformat = VIDEO_PIX_FMT_RGB565;
-	fmt.width = 1280;
-	fmt.height = 720;
-	fmt.pitch = fmt.width * 2;
+	fmt.width = CONFIG_VIDEO_OV5640_DEFAULT_WIDTH;
+	fmt.height = CONFIG_VIDEO_OV5640_DEFAULT_HEIGHT;
+	fmt.pitch = CONFIG_VIDEO_OV5640_DEFAULT_PITCH;
 	ret = ov5640_set_fmt(dev, VIDEO_EP_OUT, &fmt);
 	if (ret) {
 		LOG_ERR("Unable to configure default format");

@@ -10,3 +10,33 @@ config VIDEO_OV5640
 	default y
 	help
 	  Enable driver for OV5640 CMOS digital image sensor device
+
+config VIDEO_OV5640
+	bool "OV5640 CMOS digital image sensor"
+	select I2C
+	depends on DT_HAS_OVTI_OV5640_ENABLED
+	default y
+	help
+	  Enable driver for OV5640 CMOS digital image sensor device
+
+config VIDEO_OV5640_DEFAULT_WIDTH
+	int "OV5640 default frame width in pixels"
+	depends on DT_HAS_OVTI_OV5640_ENABLED
+	default 1280
+	help
+	  frame width in pixels
+
+config VIDEO_OV5640_DEFAULT_HEIGHT
+	int "OV5640 default frame height in pixels"
+	depends on DT_HAS_OVTI_OV5640_ENABLED
+	default 720
+	help
+	  frame height in pixels
+
+config VIDEO_OV5640_DEFAULT_PITCH
+	int "OV5640 default pitch"
+	depends on DT_HAS_OVTI_OV5640_ENABLED
+	default 2560
+	help
+	  line stride
+
