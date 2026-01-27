@@ -199,6 +199,9 @@ static const struct device *const devices[] = {
 #ifdef CONFIG_COUNTER_BEE_TIMER
 	DEVS_FOR_DT_COMPAT(realtek_bee_counter_timer)
 #endif
+#ifdef CONFIG_COUNTER_HPM_GPTMR
+	DEVS_FOR_DT_COMPAT(hpmicro_hpm_gptimer)
+#endif
 };
 
 static const struct device *const period_devs[] = {

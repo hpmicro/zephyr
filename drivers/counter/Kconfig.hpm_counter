@@ -1,0 +1,10 @@
+# Copyright (c) 2026 HPMicro
+# SPDX-License-Identifier: Apache-2.0
+
+config COUNTER_HPM_GPTMR
+	bool "HPM GPT driver"
+	default y
+	depends on GPT_HPMICRO
+	help
+	  Enable support for the HPM GPTMR.
+
