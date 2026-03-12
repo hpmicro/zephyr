@@ -9,7 +9,7 @@
 
 #define SIZE	(4096)
 
-static ZTEST_BMEM uint8_t user_buffer[SIZE];
+static ZTEST_BMEM uint8_t user_buffer[SIZE] __aligned(64);
 
 ZTEST(cache_api, test_instr_cache_api)
 {
